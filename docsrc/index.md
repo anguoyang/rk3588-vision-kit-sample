@@ -67,3 +67,5 @@ benchmarks
 known-issues
 faq
 ```
+
+**Languages:** English · [简体中文](zh/) · [日本語](ja/)
