@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmarks &mdash; RK3588 Vision Deployment Kit</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/benchmarks.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Known Issues &amp; Failure Records" href="known-issues.html" />
+    <link rel="prev" title="Version Matrix" href="version-matrix.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RK3588 Vision Deployment Kit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart (free sample)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#get-the-runtime-in-place">1. Get the runtime in place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#run-the-sample">2. Run the sample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#check-the-numbers">3. Check the numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#next-steps">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="version-matrix.html">Version Matrix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#tested-configuration-reference">Tested configuration (reference)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#rules-that-come-from-hard-experience">Rules that come from hard experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#support-boundary">Support boundary</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Benchmarks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#protocol">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#results-23-measured-configurations-14-models">Results (23 measured configurations, 14 models)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-read-this-table">How to read this table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="known-issues.html">Known Issues &amp; Failure Records</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#first-context-effect">First-context effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#retinaface-int8">RetinaFace INT8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#pp-ocrv4-rec-reshape-fallback">PP-OCRv4-Rec Reshape fallback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#session-variance">Session variance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#buying">Buying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#technical">Technical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#support">Support</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RK3588 Vision Deployment Kit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Benchmarks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/benchmarks.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="benchmarks">
+<h1>Benchmarks<a class="headerlink" href="#benchmarks" title="Link to this heading"></a></h1>
+<section id="protocol">
+<h2>Protocol<a class="headerlink" href="#protocol" title="Link to this heading"></a></h2>
+<p>Every number below was produced the same way, on the
+<a class="reference internal" href="version-matrix.html"><span class="std std-doc">reference configuration</span></a>:</p>
+<ul class="simple">
+<li><p><strong>Warmup:</strong> 10 runs, then <strong>50 timed runs</strong> per session</p></li>
+<li><p><strong>Sessions:</strong> 3 independent sessions, each in its own process;
+the reported value is the <strong>median of session medians</strong></p></li>
+<li><p><strong>Priming:</strong> one sacrificial load + 5-run cycle in a separate process
+before measuring (see the
+<a class="reference internal" href="known-issues.html#first-context-effect"><span class="std std-ref">first-context effect</span></a>)</p></li>
+<li><p><strong>Timer:</strong> NPU <code class="docutils literal notranslate"><span class="pre">PERF_RUN</span></code> profiling; CPU-fallback share computed from
+per-operator timings</p></li>
+<li><p><strong>Verdict:</strong> <code class="docutils literal notranslate"><span class="pre">NPU_ONLY</span></code> = no operator executed on CPU;
+<code class="docutils literal notranslate"><span class="pre">MIXED</span></code> = some operators fell back (share shown)</p></li>
+</ul>
+<p>Single-session numbers on this SoC can sit ~15% off the sustained state;
+that is why the protocol above is not optional when comparing.</p>
+</section>
+<section id="results-23-measured-configurations-14-models">
+<h2>Results (23 measured configurations, 14 models)<a class="headerlink" href="#results-23-measured-configurations-14-models" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Task</p></th>
+<th class="head"><p>Precision</p></th>
+<th class="head"><p>p50 (ms)</p></th>
+<th class="head"><p>p95 (ms)</p></th>
+<th class="head"><p>FPS (p50)</p></th>
+<th class="head"><p>Verdict</p></th>
+<th class="head"><p>CPU fallback</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MobileNetV2</p></td>
+<td><p>classify</p></td>
+<td><p>FP</p></td>
+<td><p>8.63</p></td>
+<td><p>8.89</p></td>
+<td><p>115.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>MobileNetV2</p></td>
+<td><p>classify</p></td>
+<td><p>INT8</p></td>
+<td><p>4.15</p></td>
+<td><p>4.65</p></td>
+<td><p>241.3</p></td>
+<td><p>MIXED</p></td>
+<td><p>1.10%</p></td>
+</tr>
+<tr class="row-even"><td><p>ResNet50-v2</p></td>
+<td><p>classify</p></td>
+<td><p>FP</p></td>
+<td><p>25.40</p></td>
+<td><p>29.34</p></td>
+<td><p>39.4</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>ResNet50-v2</p></td>
+<td><p>classify</p></td>
+<td><p>INT8</p></td>
+<td><p>13.54</p></td>
+<td><p>15.26</p></td>
+<td><p>73.8</p></td>
+<td><p>MIXED</p></td>
+<td><p>0.63%</p></td>
+</tr>
+<tr class="row-even"><td><p>RetinaFace (Mobile320)</p></td>
+<td><p>face-detect</p></td>
+<td><p>FP</p></td>
+<td><p>6.43</p></td>
+<td><p>6.68</p></td>
+<td><p>155.6</p></td>
+<td><p>MIXED</p></td>
+<td><p>4.05%</p></td>
+</tr>
+<tr class="row-odd"><td><p>RetinaFace (Mobile320)</p></td>
+<td><p>face-detect</p></td>
+<td><p>INT8</p></td>
+<td><p>7.99</p></td>
+<td><p>8.35</p></td>
+<td><p>125.2</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.74%</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLO11n</p></td>
+<td><p>detect</p></td>
+<td><p>FP</p></td>
+<td><p>43.67</p></td>
+<td><p>49.79</p></td>
+<td><p>22.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>YOLO11n</p></td>
+<td><p>detect</p></td>
+<td><p>INT8</p></td>
+<td><p>31.20</p></td>
+<td><p>31.69</p></td>
+<td><p>32.1</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLOv5s (ReLU)</p></td>
+<td><p>detect</p></td>
+<td><p>FP</p></td>
+<td><p>37.81</p></td>
+<td><p>38.58</p></td>
+<td><p>26.5</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>YOLOv5s (ReLU)</p></td>
+<td><p>detect</p></td>
+<td><p>INT8</p></td>
+<td><p>20.52</p></td>
+<td><p>22.30</p></td>
+<td><p>48.7</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLOv8n</p></td>
+<td><p>detect</p></td>
+<td><p>FP</p></td>
+<td><p>37.50</p></td>
+<td><p>38.58</p></td>
+<td><p>26.7</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>YOLOv8n</p></td>
+<td><p>detect</p></td>
+<td><p>INT8</p></td>
+<td><p>19.17</p></td>
+<td><p>19.76</p></td>
+<td><p>52.2</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLOv10s</p></td>
+<td><p>detect</p></td>
+<td><p>FP</p></td>
+<td><p>88.09</p></td>
+<td><p>90.49</p></td>
+<td><p>11.4</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>YOLOv8n-obb</p></td>
+<td><p>detect-obb</p></td>
+<td><p>FP</p></td>
+<td><p>37.65</p></td>
+<td><p>38.26</p></td>
+<td><p>26.6</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLOv8n-pose</p></td>
+<td><p>pose</p></td>
+<td><p>FP</p></td>
+<td><p>49.74</p></td>
+<td><p>51.27</p></td>
+<td><p>20.1</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>YOLOv8n-pose</p></td>
+<td><p>pose</p></td>
+<td><p>INT8</p></td>
+<td><p>31.64</p></td>
+<td><p>32.71</p></td>
+<td><p>31.6</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLOv8n-seg</p></td>
+<td><p>segment</p></td>
+<td><p>FP</p></td>
+<td><p>46.74</p></td>
+<td><p>57.36</p></td>
+<td><p>21.4</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>YOLOv8s-seg</p></td>
+<td><p>segment</p></td>
+<td><p>FP</p></td>
+<td><p>104.54</p></td>
+<td><p>113.09</p></td>
+<td><p>9.6</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>YOLOv8s-seg</p></td>
+<td><p>segment</p></td>
+<td><p>INT8</p></td>
+<td><p>43.84</p></td>
+<td><p>45.44</p></td>
+<td><p>22.8</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>PP-YOLOE-s</p></td>
+<td><p>detect</p></td>
+<td><p>FP</p></td>
+<td><p>67.71</p></td>
+<td><p>70.44</p></td>
+<td><p>14.8</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>PP-YOLOE-s</p></td>
+<td><p>detect</p></td>
+<td><p>INT8</p></td>
+<td><p>35.80</p></td>
+<td><p>36.42</p></td>
+<td><p>27.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>PP-OCRv4-Det</p></td>
+<td><p>ocr-detect</p></td>
+<td><p>FP</p></td>
+<td><p>47.86</p></td>
+<td><p>49.99</p></td>
+<td><p>20.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>PP-OCRv4-Det</p></td>
+<td><p>ocr-detect</p></td>
+<td><p>INT8</p></td>
+<td><p>31.39</p></td>
+<td><p>39.99</p></td>
+<td><p>31.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>PP-OCRv4-Rec</p></td>
+<td><p>ocr-recognize</p></td>
+<td><p>FP</p></td>
+<td><p>22.68</p></td>
+<td><p>26.45</p></td>
+<td><p>44.1</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.58%</p></td>
+</tr>
+<tr class="row-even"><td><p>PP-OCRv4-Rec</p></td>
+<td><p>ocr-recognize</p></td>
+<td><p>INT8</p></td>
+<td><p>14.16</p></td>
+<td><p>16.96</p></td>
+<td><p>70.6</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.61%</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="how-to-read-this-table">
+<h2>How to read this table<a class="headerlink" href="#how-to-read-this-table" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>INT8 is not automatically faster.</strong> RetinaFace INT8 is <em>slower</em> than its
+FP build on this stack and is shipped as a measurement record; the FP
+artifact is the recommended one. Details in
+<a class="reference internal" href="known-issues.html#retinaface-int8"><span class="std std-ref">Known Issues</span></a>.</p></li>
+<li><p><strong>MIXED is not broken.</strong> A few <code class="docutils literal notranslate"><span class="pre">Reshape</span></code> operators routinely fall back to
+CPU with a small time share. What matters is the share, which is printed
+for every model — most vendor tables omit it.</p></li>
+<li><p><strong>Full raw reports</strong> (per-operator timings, memory deltas, session-level
+data) are in the Complete package. The summary above is complete and free;
+the raw files are what you re-check a procurement decision against.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="version-matrix.html" class="btn btn-neutral float-left" title="Version Matrix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="known-issues.html" class="btn btn-neutral float-right" title="Known Issues &amp; Failure Records" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
