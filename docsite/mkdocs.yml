@@ -1,0 +1,42 @@
+site_name: RK3588 Vision Deployment Kit
+site_description: Verified ONNX-to-RKNN deployment pipeline, version matrix, and on-device measurements for Rockchip RK3588.
+site_url: https://anguoyang.github.io/rk3588-vision-kit-sample/
+repo_url: https://github.com/anguoyang/rk3588-vision-kit-sample
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+nav:
+  - Overview: index.md
+  - Quickstart (free sample): quickstart.md
+  - Version Matrix: version-matrix.md
+  - Benchmarks: benchmarks.md
+  - Known Issues & Failure Records: known-issues.md
+  - FAQ: faq.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/anguoyang/rk3588-vision-kit-sample
