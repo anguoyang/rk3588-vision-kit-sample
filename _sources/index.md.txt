@@ -68,4 +68,9 @@ known-issues
 faq
 ```
 
-**Languages:** English · [简体中文](zh/) · [日本語](ja/)
+```{raw} html
+<script>
+(function(){try{if(!sessionStorage.getItem("lang-chosen")){var l=(navigator.language||"").toLowerCase();if(l.indexOf("zh")===0){location.replace("zh/");}else if(l.indexOf("ja")===0){location.replace("ja/");}}}catch(e){}})();
+</script>
+<p><strong>Languages:</strong> English &middot; <a href="zh/" onclick="sessionStorage.setItem('lang-chosen','1')">简体中文</a> &middot; <a href="ja/" onclick="sessionStorage.setItem('lang-chosen','1')">日本語</a></p>
+```

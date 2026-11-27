@@ -71,4 +71,6 @@ known-issues
 faq
 ```
 
-**言語 / Languages:** [English](../) · [简体中文](../zh/) · 日本語
+```{raw} html
+<p><strong>言語：</strong> <a href="../" onclick="sessionStorage.setItem('lang-chosen','1')">English</a> &middot; <a href="../zh/" onclick="sessionStorage.setItem('lang-chosen','1')">简体中文</a> &middot; 日本語</p>
+```
