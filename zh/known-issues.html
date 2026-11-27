@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>已知问题与失败记录 &mdash; RK3588 Vision Deployment Kit</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/zh/known-issues.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f115507d"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=540d3cec"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="常见问题" href="faq.html" />
+    <link rel="prev" title="基准数据" href="benchmarks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RK3588 Vision Deployment Kit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速上手（免费样本）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id2">1. 准备运行时</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id3">2. 运行样本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id4">3. 核对数字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id5">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="version-matrix.html">版本矩阵</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id2">已测配置（参考）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id3">用血泪换来的规矩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id4">支持边界</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">基准数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id2">测量协议</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id3">结果（23 个测量配置，14 个模型）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id4">这张表怎么读</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">已知问题与失败记录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">首次上下文效应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retinaface-int8">RetinaFace INT8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pp-ocrv4-rec-reshape">PP-OCRv4-Rec 的 Reshape 回退</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">会话间波动</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id2">购买</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id3">技术</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id4">支持</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RK3588 Vision Deployment Kit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">已知问题与失败记录</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/known-issues.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>已知问题与失败记录<a class="headerlink" href="#id1" title="链接到此标题。"></a></h1>
+<p>这一页是从模型仓和 AI 助手那里拿不到的东西：在真机上真实出过的
+问题、怎么定位的、最后发的是什么。只要有测量结果推翻先前结论，
+这一页就会更新。</p>
+<section id="id2">
+<h2>首次上下文效应<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
+<p>板卡空闲后启动的第一个 RKNN 进程，即使做了预热运行，也会慢
+<strong>约 15%</strong>（RK3588、<code class="docutils literal notranslate"><span class="pre">rknpu_ondemand</span></code> 调速器下）。开机后随手测一次
+的数字会系统性地低估这块板。</p>
+<p><strong>套件协议：</strong> 任何计时会话之前，先在单独进程里做一次牺牲性的
+加载＋5 次运行（见<a class="reference internal" href="benchmarks.html"><span class="std std-doc">基准数据</span></a>的协议）。如果你的数字
+比本站低约 15%、且只冷测了一次，几乎可以肯定就是这个原因。</p>
+</section>
+<section id="retinaface-int8">
+<h2>RetinaFace INT8<a class="headerlink" href="#retinaface-int8" title="链接到此标题。"></a></h2>
+<p>两个独立问题，都已复现：</p>
+<ol class="arabic simple">
+<li><p><strong>产物膨胀。</strong> toolkit 2.3.2 构建这个模型时产出了一件 18.9 MB
+的产物，而网络只有约 150 万参数。逐层隔离定位到末端 <code class="docutils literal notranslate"><span class="pre">Concat</span></code>
+算子周边的内存规划：约 17.5 MB 的零填充映像被写进了产物。这是
+编译器行为，不是参数设置错误，用户侧无法调掉。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">normal</span></code> 标定的置信度塌陷。</strong> normal 标定的 INT8 件系统性地
+压缩检测置信度：0.5 阈值下参考场景 <strong>3 张脸检出 0 张</strong>。换
+KL 散度标定后同阈值检出 2/3，但仍慢于 FP 件（p50 7.99 ms 对
+6.43 ms），且有 2.74% 的 CPU 回退。</p></li>
+</ol>
+<p><strong>随包发货：</strong> RetinaFace 推荐 FP 件。KL 标定的 INT8 件作为测量
+记录附带，以本页为其说明。normal 标定件已下架。</p>
+</section>
+<section id="pp-ocrv4-rec-reshape">
+<h2>PP-OCRv4-Rec 的 Reshape 回退<a class="headerlink" href="#pp-ocrv4-rec-reshape" title="链接到此标题。"></a></h2>
+<p>识别模型的 FP 与 INT8 两件，都在最后 softmax 之后有一个 <code class="docutils literal notranslate"><span class="pre">Reshape</span></code>
+在 CPU 上执行：占帧时间 2.58% / 2.61%。不阻塞部署，记录在此是
+为了让你的延迟预算诚实。</p>
+</section>
+<section id="id3">
+<h2>会话间波动<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
+<p>同一产物的会话中位数可以差得很明显（例如 YOLO11n INT8 一组测量里
+三个会话的 p50 是 23.8 / 31.4 / 31.2 ms）。套件报告三会话的中位数，
+原始报告（Complete 包）保留逐会话值——如果某个厂商的表只给你一个
+没有离散度的数字，先问它是怎么测的。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="benchmarks.html" class="btn btn-neutral float-left" title="基准数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="常见问题" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

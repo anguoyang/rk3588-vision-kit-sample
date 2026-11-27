@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>既知の問題と失敗の記録 &mdash; RK3588 Vision Deployment Kit</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/ja/known-issues.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6bbe880f"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="prev" title="ベンチマーク" href="benchmarks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RK3588 Vision Deployment Kit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタート（無料サンプル）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id2">1. ランタイムを用意する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id3">2. サンプルを実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id4">3. 数値を確認する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id5">次のステップ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="version-matrix.html">バージョン対応表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id2">テスト済み構成（リファレンス）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id3">痛い目を見て得たルール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id4">サポート範囲</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">ベンチマーク</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id2">計測プロトコル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id3">結果（計測構成 23 件、モデル 14 種）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id4">この表の読み方</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">既知の問題と失敗の記録</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">初回コンテキスト効果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retinaface-int8">RetinaFace INT8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pp-ocrv4-rec-reshape">PP-OCRv4-Rec の Reshape フォールバック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">セッション間のばらつき</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id1">購入について</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id2">技術について</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id3">サポート</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RK3588 Vision Deployment Kit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">既知の問題と失敗の記録</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/known-issues.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>既知の問題と失敗の記録<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>このページは、モデルズーや AI アシスタントからは得られないものです。
+実ハードウェアで実際に起きた問題、その切り分け方、そして最終的に
+何を出荷したか。計測結果が以前の主張を覆したら、このページを
+更新します。</p>
+<section id="id2">
+<h2>初回コンテキスト効果<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>ボードがアイドル状態だった直後の最初の RKNN プロセスは、ウォーム
+アップ後でも<strong>約15%遅く</strong>計測されます（RK3588、<code class="docutils literal notranslate"><span class="pre">rknpu_ondemand</span></code>
+ガバナ使用時）。起動直後に1回だけ測ったベンチマークは、このボードを
+系統的に過小評価します。</p>
+<p><strong>キットのプロトコル：</strong> 計時セッションの前に、別プロセスで犠牲的な
+ロード＋5回実行を1回行います（<a class="reference internal" href="benchmarks.html"><span class="std std-doc">ベンチマーク</span></a>の
+プロトコル参照）。数値が本サイトより約15%低く、冷えた状態で1回しか
+測っていないなら、ほぼ間違いなくこれが原因です。</p>
+</section>
+<section id="retinaface-int8">
+<h2>RetinaFace INT8<a class="headerlink" href="#retinaface-int8" title="Link to this heading"></a></h2>
+<p>再現済みの、独立した2つの問題があります。</p>
+<ol class="arabic simple">
+<li><p><strong>成果物の肥大化。</strong> toolkit 2.3.2 でこのモデルをビルドすると、
+パラメータ約150万のネットワークに対して 18.9 MB の成果物が生成
+されました。レイヤ単位の切り分けで、最終 <code class="docutils literal notranslate"><span class="pre">Concat</span></code> 演算子周辺の
+メモリ計画が原因と特定しました。約 17.5 MB のゼロ埋めイメージが
+成果物に書き込まれています。設定ミスではなくコンパイラの挙動で、
+ユーザ側では調整できません。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">normal</span></code> キャリブレーションでの信頼度の崩壊。</strong> normal で
+キャリブレーションした INT8 ビルドは、検出信頼度を系統的に圧縮
+します。0.5 の閾値でリファレンスシーンの<strong>顔3件中0件</strong>しか検出
+できませんでした。KL ダイバージェンス版は同じ閾値で3件中2件を
+検出しますが、FP ビルドより依然遅く（p50 7.99 ms 対 6.43 ms）、
+CPU フォールバックも 2.74% あります。</p></li>
+</ol>
+<p><strong>出荷内容：</strong> RetinaFace の推奨は FP 成果物です。KL 版 INT8 は
+計測記録として、本ページを説明書として同梱します。normal 版は
+取り下げました。</p>
+</section>
+<section id="pp-ocrv4-rec-reshape">
+<h2>PP-OCRv4-Rec の Reshape フォールバック<a class="headerlink" href="#pp-ocrv4-rec-reshape" title="Link to this heading"></a></h2>
+<p>認識モデルの FP/INT8 両ビルドとも、最終 softmax の後の <code class="docutils literal notranslate"><span class="pre">Reshape</span></code>
+1つが CPU で実行されます。フレーム時間の 2.58% / 2.61% です。
+デプロイの障害にはなりません。レイテンシ予算を正直に見積もれる
+よう、記録しています。</p>
+</section>
+<section id="id3">
+<h2>セッション間のばらつき<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>同じ成果物でもセッション中央値は目に見えて異なります（例：YOLO11n
+INT8 のある計測セットではセッション p50 が 23.8 / 31.4 / 31.2 ms）。
+本キットは3セッションの中央値を報告し、生レポート（Complete
+パッケージ）にセッション単位の値を保持します。ばらつきのない単一の
+数値だけを示すベンダ表を見たら、まず測り方を疑ってください。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="benchmarks.html" class="btn btn-neutral float-left" title="ベンチマーク" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

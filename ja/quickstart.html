@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>クイックスタート（無料サンプル） &mdash; RK3588 Vision Deployment Kit</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/ja/quickstart.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6bbe880f"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="バージョン対応表" href="version-matrix.html" />
+    <link rel="prev" title="RK3588 ビジョンデプロイメントキット" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RK3588 Vision Deployment Kit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">クイックスタート（無料サンプル）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1. ランタイムを用意する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2. サンプルを実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">3. 数値を確認する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">次のステップ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="version-matrix.html">バージョン対応表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id2">テスト済み構成（リファレンス）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id3">痛い目を見て得たルール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-matrix.html#id4">サポート範囲</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">ベンチマーク</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id2">計測プロトコル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id3">結果（計測構成 23 件、モデル 14 種）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#id4">この表の読み方</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="known-issues.html">既知の問題と失敗の記録</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#id2">初回コンテキスト効果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#retinaface-int8">RetinaFace INT8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#pp-ocrv4-rec-reshape">PP-OCRv4-Rec の Reshape フォールバック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#id3">セッション間のばらつき</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id1">購入について</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id2">技術について</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id3">サポート</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RK3588 Vision Deployment Kit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">クイックスタート（無料サンプル）</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/quickstart.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>クイックスタート（無料サンプル）<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>無料サンプルには、本キットの完全で実行可能な一切れ——MobileNetV2 の
+分類、FP と INT8、エンドツーエンド——が入っています。お金を払う前に、
+パイプライン、ドキュメントの書き方、データ形式を検証するための
+ものです。</p>
+<section id="id2">
+<h2>1. ランタイムを用意する<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>本キットは Rockchip のプロプライエタリなランタイムを再配布しません。
+ボードベンダのパッケージで <code class="docutils literal notranslate"><span class="pre">librknnrt</span></code> 2.3.2 をインストールし、
+確認してください。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>strings<span class="w"> </span>/usr/lib/librknnrt.so<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"librknnrt version"</span>
+<span class="c1"># 期待値：librknnrt version: 2.3.2</span>
+</pre></div>
+</div>
+<p>テスト済みなのは<a class="reference internal" href="version-matrix.html"><span class="std std-doc">バージョン対応表</span></a>の組み合わせ
+だけです。</p>
+</section>
+<section id="id3">
+<h2>2. サンプルを実行する<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/anguoyang/rk3588-vision-kit-sample
+<span class="nb">cd</span><span class="w"> </span>rk3588-vision-kit-sample/example_classify_mobilenetv2
+python3<span class="w"> </span>run_classify.py<span class="w"> </span>--model<span class="w"> </span>../models/mobilenetv2_rk3588_fp.rknn<span class="w"> </span>--image<span class="w"> </span>zebra.jpg
+python3<span class="w"> </span>run_classify.py<span class="w"> </span>--model<span class="w"> </span>../models/mobilenetv2_rk3588_int8.rknn<span class="w"> </span>--image<span class="w"> </span>zebra.jpg
+</pre></div>
+</div>
+<p>リファレンスボードでの期待出力：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">top</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">zebra</span>  <span class="mf">0.9993</span>   <span class="p">(</span><span class="n">FP</span><span class="p">)</span>
+<span class="n">top</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">zebra</span>  <span class="mf">0.9993</span>   <span class="p">(</span><span class="n">INT8</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>3. 数値を確認する<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>お使いのボードの結果を<a class="reference internal" href="benchmarks.html"><span class="std std-doc">ベンチマーク</span></a>のリファレンス値と
+比べてください。リファレンス構成では MobileNetV2 は <strong>p50 8.63 ms
+（FP）</strong>、<strong>p50 4.15 ms（INT8）</strong> です。初回実行が約15%遅いのは
+既知のプラットフォーム特性で、故障ではありません——
+<a class="reference internal" href="known-issues.html"><span class="std std-doc">既知の問題</span></a>参照。</p>
+</section>
+<section id="id5">
+<h2>次のステップ<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>フルキットには、さらに11点の成果物、検出/顔/OCR のサンプル、自前
+モデル用変換パイプライン、生レポート全量が入ります。</p></li>
+<li><p>質問は<a class="reference internal" href="faq.html"><span class="std std-doc">FAQ</span></a>へ。</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="RK3588 ビジョンデプロイメントキット" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="version-matrix.html" class="btn btn-neutral float-right" title="バージョン対応表" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
