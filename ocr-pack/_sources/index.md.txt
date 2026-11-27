@@ -1,0 +1,58 @@
+# Edge OCR Deployment Pack for RK3588
+
+Offline OCR that runs entirely on the board. This pack contains the
+PP-OCRv4 detection + recognition pipeline converted for RK3588 (FP and
+INT8), a worked end-to-end example, and the on-device measurements —
+for products whose documents must never leave the premises.
+
+## Contents
+
+| Component | Contents |
+|---|---|
+| `models/` | PP-OCRv4-Det and PP-OCRv4-Rec, FP + INT8 (4 artifacts, SHA-256 in `LICENSES.md`) |
+| `example_ocr_ppocrv4/` | End-to-end example: detect → recognize → text out |
+| `data/reports/` | Raw measurement reports for all 4 artifacts |
+| Documentation (this site, also bundled) | Quickstart, benchmarks, known issues, licensing |
+
+## Measured on the reference board
+
+| Artifact | p50 | p95 | Verdict |
+|---|---|---|---|
+| PP-OCRv4-Det FP | 47.86 ms | 49.99 ms | NPU_ONLY |
+| PP-OCRv4-Det INT8 | 31.39 ms | 39.99 ms | NPU_ONLY |
+| PP-OCRv4-Rec FP | 22.68 ms | 26.45 ms | MIXED (2.58% CPU) |
+| PP-OCRv4-Rec INT8 | 14.16 ms | 16.96 ms | MIXED (2.61% CPU) |
+
+Environment: RK3588, Ubuntu 22.04.5, kernel 6.1.118, driver 0.9.8,
+librknnrt 2.3.2, toolkit2 2.3.2. Protocol and caveats in
+[Benchmarks](benchmarks.md) and [Known Issues](known-issues.md).
+
+## Scope — read before buying
+
+- The recognition model is the stock PP-OCRv4 dictionary (Chinese,
+  English, digits). End-to-end verification in this pack: a synthetic
+  38-character test image read back **36/38 characters** (two confusions,
+  O→0 and I→l, recorded in the example output).
+- **Japanese receipt accuracy has not been measured yet.** A
+  Japanese-document evaluation is on the roadmap; this pack makes no
+  Japanese accuracy claim, and the price reflects that. If your use case
+  is Japanese receipts, evaluate the sample numbers against your own
+  documents first, or wait for the evaluation edition.
+
+## Why a pack, not the model zoo download
+
+The zoo gives you the models. This pack gives you the pair already
+converted for the pinned toolkit/runtime combination, an example that
+runs as shipped, the measured latency/fallback record for capacity
+planning, and one documented place for the two traps that bite everyone
+(the recognition INT8 recipe divergence and the Reshape fallback).
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+
+quickstart
+benchmarks
+known-issues
+licensing
+```

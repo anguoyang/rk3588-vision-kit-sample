@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Known Issues &amp; Failure Records &mdash; RK3588 Edge Measurement Data Pack</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/data-pack/known-issues.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License (summary)" href="license.html" />
+    <link rel="prev" title="Data Catalog" href="catalog.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RK3588 Edge Measurement Data Pack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#protocol">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#aggregation-gate">Aggregation gate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#calibration-disclosure">Calibration disclosure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment Fingerprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catalog.html">Data Catalog</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Known Issues &amp; Failure Records</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#first-context-effect-15">First-context effect (~15%)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retinaface-int8-two-defects-one-withdrawn-build">RetinaFace INT8: two defects, one withdrawn build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#session-variance-is-real">Session variance is real</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pp-ocrv4-rec-fallback">PP-OCRv4-Rec fallback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License (summary)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">1.0 — 2026-11-27</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RK3588 Edge Measurement Data Pack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Known Issues &amp; Failure Records</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/known-issues.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="known-issues-failure-records">
+<h1>Known Issues &amp; Failure Records<a class="headerlink" href="#known-issues-failure-records" title="Link to this heading"></a></h1>
+<p>The failures are part of the product. A measurement package that only
+publishes successes is marketing, not data.</p>
+<section id="first-context-effect-15">
+<h2>First-context effect (~15%)<a class="headerlink" href="#first-context-effect-15" title="Link to this heading"></a></h2>
+<p>The first RKNN process after the board has been idle measures ~15%
+slower, even after warmup, under the <code class="docutils literal notranslate"><span class="pre">rknpu_ondemand</span></code> governor. Any
+single cold benchmark of this platform is biased low. The protocol’s
+priming step exists because of this effect.</p>
+</section>
+<section id="retinaface-int8-two-defects-one-withdrawn-build">
+<h2>RetinaFace INT8: two defects, one withdrawn build<a class="headerlink" href="#retinaface-int8-two-defects-one-withdrawn-build" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Artifact bloat:</strong> the toolkit 2.3.2 build produced an 18.9 MB
+artifact for a ~1.5 M-parameter network; layer isolation traced ~17.5 MB
+of zero-filled image to memory planning around the final <code class="docutils literal notranslate"><span class="pre">Concat</span></code>
+operator. Compiler behaviour, not a settings error.</p></li>
+<li><p><strong>Confidence collapse:</strong> the <code class="docutils literal notranslate"><span class="pre">normal</span></code>-calibration INT8 build detected
+<strong>0 of 3</strong> reference faces at a 0.5 threshold; confidence scores are
+systematically compressed. That build was <strong>withdrawn</strong>. The
+KL-divergence build (2 of 3 faces, 7.99 ms p50) is the shipped record,
+and the FP build remains faster (6.43 ms p50) — INT8 is not
+automatically better, and this package says so per model.</p></li>
+</ul>
+</section>
+<section id="session-variance-is-real">
+<h2>Session variance is real<a class="headerlink" href="#session-variance-is-real" title="Link to this heading"></a></h2>
+<p>Session medians for one artifact can differ visibly (YOLO11n INT8:
+23.8 / 31.4 / 31.2 ms across three sessions). Reports keep every session
+value. Any single-number table without a spread should be treated as
+unmeasured.</p>
+</section>
+<section id="pp-ocrv4-rec-fallback">
+<h2>PP-OCRv4-Rec fallback<a class="headerlink" href="#pp-ocrv4-rec-fallback" title="Link to this heading"></a></h2>
+<p>One <code class="docutils literal notranslate"><span class="pre">Reshape</span></code> after the final softmax runs on CPU in both precisions
+(2.58% FP / 2.61% INT8 of frame time). Recorded, not hidden; budget for
+it.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="catalog.html" class="btn btn-neutral float-left" title="Data Catalog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral float-right" title="License (summary)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Benchmarks
+
+Protocol (identical to the RK3588 measurement data pack): 10 warmup
+runs, 50 timed runs per session, 3 independent sessions in separate
+processes, median of session medians reported, one sacrificial priming
+cycle before measuring, `PERF_RUN` profiler timing, fallback share from
+per-operator timings.
+
+| Artifact | Input | p50 (ms) | p95 (ms) | FPS | Verdict | CPU fallback |
+|---|---|---|---|---|---|---|
+| PP-OCRv4-Det FP | 1×480×480×3 | 47.86 | 49.99 | 20.9 | NPU_ONLY | 0% |
+| PP-OCRv4-Det INT8 | 1×480×480×3 | 31.39 | 39.99 | 31.9 | NPU_ONLY | 0% |
+| PP-OCRv4-Rec FP | 1×48×320×3 | 22.68 | 26.45 | 44.1 | MIXED | 2.58% |
+| PP-OCRv4-Rec INT8 | 1×48×320×3 | 14.16 | 16.96 | 70.6 | MIXED | 2.61% |
+
+Full raw reports (session values, per-operator lists, memory deltas)
+are in `data/reports/` inside the package.
+
+**Latency is not accuracy.** These figures say how fast the pipeline
+runs, not how well it reads your documents. The only end-to-end reading
+verification in this edition is the synthetic test described on the
+[overview page](index.md#scope-read-before-buying).

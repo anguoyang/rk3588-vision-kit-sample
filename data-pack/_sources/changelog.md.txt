@@ -1,0 +1,8 @@
+# Changelog
+
+## 1.0 — 2026-11-27
+
+- Initial release: 25 raw reports, 14 models, RK3588 vision edition.
+- Includes the kit completion round PP-YOLOE-s INT8 measurement and the
+  RetinaFace INT8 failure record (one build withdrawn, documented in
+  [Known Issues](known-issues.md)).

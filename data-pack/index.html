@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RK3588 Edge Measurement Data Pack — Vision Edition &mdash; RK3588 Edge Measurement Data Pack</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/data-pack/index.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Methodology" href="methodology.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            RK3588 Edge Measurement Data Pack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#protocol">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#aggregation-gate">Aggregation gate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#calibration-disclosure">Calibration disclosure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment Fingerprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catalog.html">Data Catalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known-issues.html">Known Issues &amp; Failure Records</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#first-context-effect-15">First-context effect (~15%)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#retinaface-int8-two-defects-one-withdrawn-build">RetinaFace INT8: two defects, one withdrawn build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#session-variance-is-real">Session variance is real</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#pp-ocrv4-rec-fallback">PP-OCRv4-Rec fallback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License (summary)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">1.0 — 2026-11-27</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">RK3588 Edge Measurement Data Pack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RK3588 Edge Measurement Data Pack — Vision Edition</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rk3588-edge-measurement-data-pack-vision-edition">
+<h1>RK3588 Edge Measurement Data Pack — Vision Edition<a class="headerlink" href="#rk3588-edge-measurement-data-pack-vision-edition" title="Link to this heading"></a></h1>
+<p>Measured, not estimated. This package contains the complete raw measurement
+record behind the RK3588 vision leaderboard: <strong>25 configurations across 14
+models</strong>, every one measured on real RK3588 hardware under a published
+protocol, with per-operator CPU-fallback data and the failures left in.</p>
+<p>This documentation is free. The package itself — the raw report files, the
+aggregated leaderboard JSON, and the reproduction harness notes — is the
+paid deliverable.</p>
+<section id="what-is-inside">
+<h2>What is inside<a class="headerlink" href="#what-is-inside" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">data/leaderboard.json</span></code></p></td>
+<td><p>23 aggregated configurations (median of 3 sessions each)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data/reports/</span></code></p></td>
+<td><p>25 raw per-configuration reports (JSON)</p></td>
+</tr>
+<tr class="row-even"><td><p>Documentation (this site, also bundled)</p></td>
+<td><p>Methodology, environment fingerprint, catalog, failure records</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LICENSE-DATA.md</span></code></p></td>
+<td><p>Single-organization use license for the data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-this-data-is-for">
+<h2>What this data is for<a class="headerlink" href="#what-this-data-is-for" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Model selection</strong> for an RK3588 product, without buying a board and
+spending two weeks measuring: latency distributions, memory deltas, and
+CPU-fallback shares per model and precision.</p></li>
+<li><p><strong>Procurement and review evidence</strong>: every figure carries its board
+fingerprint and protocol block, so a third party can judge what the number
+is worth and reproduce it.</p></li>
+<li><p><strong>Regression baselines</strong>: pin these numbers, re-measure after a toolkit or
+driver upgrade, and see exactly what moved.</p></li>
+</ul>
+</section>
+<section id="what-this-data-is-not">
+<h2>What this data is not<a class="headerlink" href="#what-this-data-is-not" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Not accuracy benchmarks. Latency and fallback were measured; per-model
+accuracy claims are explicitly out of scope and marked as such in every
+report that touches calibration.</p></li>
+<li><p>Not transferable to other SoCs. An RK3588 number says little about
+RK3576 or any other chip; the environment page states the exact
+configuration every number belongs to.</p></li>
+</ul>
+</section>
+<section id="editions">
+<h2>Editions<a class="headerlink" href="#editions" title="Link to this heading"></a></h2>
+<p>This is the <strong>Vision Edition</strong> (vision models on RK3588). An LLM/VLM
+edition, measured under the same protocol discipline, is in preparation.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="methodology.html" class="btn btn-neutral float-right" title="Methodology" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

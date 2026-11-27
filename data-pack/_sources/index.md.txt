@@ -1,0 +1,56 @@
+# RK3588 Edge Measurement Data Pack — Vision Edition
+
+Measured, not estimated. This package contains the complete raw measurement
+record behind the RK3588 vision leaderboard: **25 configurations across 14
+models**, every one measured on real RK3588 hardware under a published
+protocol, with per-operator CPU-fallback data and the failures left in.
+
+This documentation is free. The package itself — the raw report files, the
+aggregated leaderboard JSON, and the reproduction harness notes — is the
+paid deliverable.
+
+## What is inside
+
+| Component | Contents |
+|---|---|
+| `data/leaderboard.json` | 23 aggregated configurations (median of 3 sessions each) |
+| `data/reports/` | 25 raw per-configuration reports (JSON) |
+| Documentation (this site, also bundled) | Methodology, environment fingerprint, catalog, failure records |
+| `LICENSE-DATA.md` | Single-organization use license for the data |
+
+## What this data is for
+
+- **Model selection** for an RK3588 product, without buying a board and
+  spending two weeks measuring: latency distributions, memory deltas, and
+  CPU-fallback shares per model and precision.
+- **Procurement and review evidence**: every figure carries its board
+  fingerprint and protocol block, so a third party can judge what the number
+  is worth and reproduce it.
+- **Regression baselines**: pin these numbers, re-measure after a toolkit or
+  driver upgrade, and see exactly what moved.
+
+## What this data is not
+
+- Not accuracy benchmarks. Latency and fallback were measured; per-model
+  accuracy claims are explicitly out of scope and marked as such in every
+  report that touches calibration.
+- Not transferable to other SoCs. An RK3588 number says little about
+  RK3576 or any other chip; the environment page states the exact
+  configuration every number belongs to.
+
+## Editions
+
+This is the **Vision Edition** (vision models on RK3588). An LLM/VLM
+edition, measured under the same protocol discipline, is in preparation.
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+
+methodology
+environment
+catalog
+known-issues
+license
+changelog
+```

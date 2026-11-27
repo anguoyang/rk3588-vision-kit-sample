@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmarks &mdash; Edge OCR Deployment Pack for RK3588</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/ocr-pack/benchmarks.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Known Issues" href="known-issues.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Edge OCR Deployment Pack for RK3588
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#runtime">1. Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#run-the-example">2. Run the example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#verify-against-the-record">3. Verify against the record</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known-issues.html">Known Issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#recognition-int8-is-not-an-official-recipe">Recognition INT8 is not an official recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#reshape-fallback-in-recognition">Reshape fallback in recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#detection-int8-p95-spread">Detection INT8 p95 spread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#character-confusions-observed">Character confusions observed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">Licensing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Edge OCR Deployment Pack for RK3588</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Benchmarks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/benchmarks.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="benchmarks">
+<h1>Benchmarks<a class="headerlink" href="#benchmarks" title="Link to this heading"></a></h1>
+<p>Protocol (identical to the RK3588 measurement data pack): 10 warmup
+runs, 50 timed runs per session, 3 independent sessions in separate
+processes, median of session medians reported, one sacrificial priming
+cycle before measuring, <code class="docutils literal notranslate"><span class="pre">PERF_RUN</span></code> profiler timing, fallback share from
+per-operator timings.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Artifact</p></th>
+<th class="head"><p>Input</p></th>
+<th class="head"><p>p50 (ms)</p></th>
+<th class="head"><p>p95 (ms)</p></th>
+<th class="head"><p>FPS</p></th>
+<th class="head"><p>Verdict</p></th>
+<th class="head"><p>CPU fallback</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PP-OCRv4-Det FP</p></td>
+<td><p>1×480×480×3</p></td>
+<td><p>47.86</p></td>
+<td><p>49.99</p></td>
+<td><p>20.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>PP-OCRv4-Det INT8</p></td>
+<td><p>1×480×480×3</p></td>
+<td><p>31.39</p></td>
+<td><p>39.99</p></td>
+<td><p>31.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>PP-OCRv4-Rec FP</p></td>
+<td><p>1×48×320×3</p></td>
+<td><p>22.68</p></td>
+<td><p>26.45</p></td>
+<td><p>44.1</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.58%</p></td>
+</tr>
+<tr class="row-odd"><td><p>PP-OCRv4-Rec INT8</p></td>
+<td><p>1×48×320×3</p></td>
+<td><p>14.16</p></td>
+<td><p>16.96</p></td>
+<td><p>70.6</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.61%</p></td>
+</tr>
+</tbody>
+</table>
+<p>Full raw reports (session values, per-operator lists, memory deltas)
+are in <code class="docutils literal notranslate"><span class="pre">data/reports/</span></code> inside the package.</p>
+<p><strong>Latency is not accuracy.</strong> These figures say how fast the pipeline
+runs, not how well it reads your documents. The only end-to-end reading
+verification in this edition is the synthetic test described on the
+<a class="reference internal" href="index.html#scope-read-before-buying"><span class="std std-ref">overview page</span></a>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="known-issues.html" class="btn btn-neutral float-right" title="Known Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

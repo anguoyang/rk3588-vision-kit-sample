@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Catalog &mdash; RK3588 Edge Measurement Data Pack</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://anguoyang.github.io/rk3588-vision-kit-sample/data-pack/catalog.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Known Issues &amp; Failure Records" href="known-issues.html" />
+    <link rel="prev" title="Environment Fingerprint" href="environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RK3588 Edge Measurement Data Pack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#protocol">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#aggregation-gate">Aggregation gate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methodology.html#calibration-disclosure">Calibration disclosure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment Fingerprint</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Catalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known-issues.html">Known Issues &amp; Failure Records</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#first-context-effect-15">First-context effect (~15%)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#retinaface-int8-two-defects-one-withdrawn-build">RetinaFace INT8: two defects, one withdrawn build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#session-variance-is-real">Session variance is real</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html#pp-ocrv4-rec-fallback">PP-OCRv4-Rec fallback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License (summary)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">1.0 — 2026-11-27</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RK3588 Edge Measurement Data Pack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Data Catalog</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/catalog.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-catalog">
+<h1>Data Catalog<a class="headerlink" href="#data-catalog" title="Link to this heading"></a></h1>
+<p>All 25 raw measurement reports in this package, one JSON per configuration.
+Fields per report: board fingerprint (SoC, OS, kernel, driver, runtime build), full protocol block, latency distribution (p50/p95/mean/min/max), per-operator CPU-fallback list with time shares, memory deltas, calibration recipe, and session-level values.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Task</p></th>
+<th class="head"><p>Precision</p></th>
+<th class="head"><p>p50 (ms)</p></th>
+<th class="head"><p>p95 (ms)</p></th>
+<th class="head"><p>FPS</p></th>
+<th class="head"><p>Verdict</p></th>
+<th class="head"><p>CPU fallback</p></th>
+<th class="head"><p>Report file</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>{‘display_name’: ‘MobileNetV2’, ‘task’: ‘classify’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘mobilenetv2_rk3588_fp.rknn’, ‘size_bytes’: 7665073, ‘sha256’: ‘71651b34791df75cde53a5e14f44d79d63d85c5e405433b09e7ef2429a95e100’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>8.63</p></td>
+<td><p>8.892</p></td>
+<td><p>115.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MobileNetV2.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘MobileNetV2’, ‘task’: ‘classify’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘mobilenetv2_rk3588_int8.rknn’, ‘size_bytes’: 4166411, ‘sha256’: ‘7e0f67334e13c1ca5ed4553c3cabde52fe4e4c9842634e42b53cf2e5d880905b’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>4.145</p></td>
+<td><p>4.652</p></td>
+<td><p>241.3</p></td>
+<td><p>MIXED</p></td>
+<td><p>1.104%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MobileNetV2_INT8_v05.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘PP-OCRv4-Det’, ‘task’: ‘ocr-detect’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘ppocrv4_det_rk3588_fp.rknn’, ‘size_bytes’: 3931899, ‘sha256’: ‘d073293ec6b67cf175849cec161b968f6505d8d454c341017bc48a3dc29ea26c’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>47.864</p></td>
+<td><p>49.989</p></td>
+<td><p>20.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PP-OCRv4-Det.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘PP-OCRv4-Det’, ‘task’: ‘ocr-detect’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘ppocrv4_det_rk3588_int8.rknn’, ‘size_bytes’: 2631893, ‘sha256’: ‘69a55f2f2dab08902f3fc3d330806cf8a9febd8083054b7177377b52b13841f6’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>31.386</p></td>
+<td><p>39.99</p></td>
+<td><p>31.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PP-OCRv4-Det_INT8_v05.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘PP-OCRv4-Rec’, ‘task’: ‘ocr-recognize’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘ppocrv4_rec_rk3588_fp.rknn’, ‘size_bytes’: 7066425, ‘sha256’: ‘d714eef1ef3aaf8880bbf38eb61578036e4de0cdf65f6af44eaf6b2243a06f8b’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>22.679</p></td>
+<td><p>26.453</p></td>
+<td><p>44.1</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.58%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PP-OCRv4-Rec.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘PP-OCRv4-Rec’, ‘task’: ‘ocr-recognize’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘ppocrv4_rec_rk3588_int8.rknn’, ‘size_bytes’: 4381395, ‘sha256’: ‘131a7059654e9de4d6ef8f450cf52eccecf4f91c137600b5fe89441cb0b85633’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>14.163</p></td>
+<td><p>16.96</p></td>
+<td><p>70.6</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.613%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PP-OCRv4-Rec_INT8_v05.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘PP-YOLOE-s’, ‘task’: ‘detect’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘ppyoloe_s_rk3588_fp.rknn’, ‘size_bytes’: 17910014, ‘sha256’: ‘2ee9a68d9ae0807ed76e0238345bc4f363c5834611fe45702c8a04861e6f2bc2’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>67.706</p></td>
+<td><p>70.435</p></td>
+<td><p>14.8</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PP-YOLOE-s_FP_v04.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘PP-YOLOE-s’, ‘task’: ‘detect’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘ppyoloe_s_rk3588_int8.rknn’, ‘size_bytes’: 9719360, ‘sha256’: ‘d803d0b901308273d94cd2933e623b18710e34bb3af7172218be86230a3753e7’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>35.803</p></td>
+<td><p>36.416</p></td>
+<td><p>27.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PP-YOLOE-s_INT8_v05.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘ResNet50-v2’, ‘task’: ‘classify’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘resnet50-v2_rk3588_fp.rknn’, ‘size_bytes’: 52340158, ‘sha256’: ‘65ba33f2592cf7997d8e9b3804a361b8b96938eb11da8f3ab8249533865e1b71’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>25.404</p></td>
+<td><p>29.343</p></td>
+<td><p>39.4</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ResNet50-v2.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘ResNet50-v2’, ‘task’: ‘classify’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘resnet50-v2_rk3588_int8.rknn’, ‘size_bytes’: 26695768, ‘sha256’: ‘1b75729121ea6bf5b6a760d852aa67271db33d50cd5bade560d2881abe21da1a’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>13.542</p></td>
+<td><p>15.259</p></td>
+<td><p>73.8</p></td>
+<td><p>MIXED</p></td>
+<td><p>0.632%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ResNet50-v2_INT8_v05.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘RetinaFace’, ‘task’: ‘face-detect’, ‘variant’: ‘Mobile320’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘retinaface_mobile320_rk3588_fp.rknn’, ‘size_bytes’: 1566716, ‘sha256’: ‘9594fd15f2121467c7c9330fdc652664b31645d65c9b742831141747ca315f73’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>6.427</p></td>
+<td><p>6.68</p></td>
+<td><p>155.6</p></td>
+<td><p>MIXED</p></td>
+<td><p>4.05%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RetinaFace.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘RetinaFace’, ‘task’: ‘face-detect’, ‘variant’: ‘Mobile320’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘retinaface_mobile320_rk3588_int8.rknn’, ‘size_bytes’: 18852067, ‘sha256’: ‘a41ea8acecd0687756a066fac8dfdbab72b6ff9b8494b004f7111d61fe7ea676’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>7.99</p></td>
+<td><p>8.35</p></td>
+<td><p>125.2</p></td>
+<td><p>MIXED</p></td>
+<td><p>2.739%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RetinaFace_INT8_v05.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘YOLO11n’, ‘task’: ‘detect’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolo11n_rk3588_int8.rknn’, ‘size_bytes’: 4247819, ‘sha256’: ‘26c1974020ee62850e08dcc09bcb789472485fa32857df44efb31d74aeba933b’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>31.197</p></td>
+<td><p>31.69</p></td>
+<td><p>32.1</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLO11n-INT8.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘YOLO11n’, ‘task’: ‘detect’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolo11n_rk3588_fp.rknn’, ‘size_bytes’: 7030857, ‘sha256’: ‘34c0c7929110e133985942924648a22492491cff02961a3b1a69c219cea72680’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>43.672</p></td>
+<td><p>49.788</p></td>
+<td><p>22.9</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLO11n.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘YOLOv10s’, ‘task’: ‘detect’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov10s_det_rk3588_fp.rknn’, ‘size_bytes’: 16578924, ‘sha256’: ‘d539a98b8817b273b2145bbd515397db9f503924810fffb6a30ba0a4cbbd7edf’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>88.088</p></td>
+<td><p>90.49</p></td>
+<td><p>11.4</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv10s.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘YOLOv5s’, ‘task’: ‘detect’, ‘variant’: ‘ReLU’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov5s_relu_rk3588_int8.rknn’, ‘size_bytes’: 8388664, ‘sha256’: ‘5387abb83f2e121ce4a4538716d900dfd255114ef861960c74cb90552b136646’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>20.523</p></td>
+<td><p>22.3</p></td>
+<td><p>48.7</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv5s-INT8.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘YOLOv5s’, ‘task’: ‘detect’, ‘variant’: ‘ReLU’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov5s_relu_rk3588_fp.rknn’, ‘size_bytes’: 16316100, ‘sha256’: ‘73afedb3186d21db81af3b104805ded418b1f464de5b00009cbf261d977dcc00’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>37.805</p></td>
+<td><p>38.582</p></td>
+<td><p>26.5</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv5s.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘YOLOv8n’, ‘task’: ‘detect’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8n_rk3588_int8.rknn’, ‘size_bytes’: 4327755, ‘sha256’: ‘5244b5708439e3c75ae7e29294a733cc836ea53957e0c6de5cf9111bcf4f951a’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>19.173</p></td>
+<td><p>19.761</p></td>
+<td><p>52.2</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8n-INT8.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘YOLOv8n-obb’, ‘task’: ‘detect-obb’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8n-obb_rk3588_fp.rknn’, ‘size_bytes’: 7658879, ‘sha256’: ‘fb922c0ce6ffd4cdf73178a2b388d6fccc719f9a1327861d185e2f139a0b79c3’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>37.649</p></td>
+<td><p>38.261</p></td>
+<td><p>26.6</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8n-obb.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘YOLOv8n-pose’, ‘task’: ‘pose’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8n-pose_rk3588_fp.rknn’, ‘size_bytes’: 8565315, ‘sha256’: ‘23f479611accb75d9d6892de99ab912f971af8b6c6a96e5ebae4569e0c0ff6f3’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>49.735</p></td>
+<td><p>51.272</p></td>
+<td><p>20.1</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8n-pose.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘YOLOv8n-pose’, ‘task’: ‘pose’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8n-pose_rk3588_int8.rknn’, ‘size_bytes’: 5219191, ‘sha256’: ‘e644c5d06b3875ee055b5c18a59626c15d1467f2adba48c0742814aac9b7a253’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>31.643</p></td>
+<td><p>32.712</p></td>
+<td><p>31.6</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8n-pose_INT8_v04.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘YOLOv8n-seg’, ‘task’: ‘segment’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8n-seg_rk3588_fp.rknn’, ‘size_bytes’: 8304755, ‘sha256’: ‘8da41b4e72a556d0a0a0497b5d49f7e492519e9623a03c3babe49cc98cdaa37d’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>46.738</p></td>
+<td><p>57.357</p></td>
+<td><p>21.4</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8n-seg_FP_v04.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘YOLOv8n’, ‘task’: ‘detect’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8n_det_rk3588_fp.rknn’, ‘size_bytes’: 7607177, ‘sha256’: ‘bb3a931d2a93d1855a31bca0f445da4c244a8679506bc15dba5cfdffb15bf455’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>37.498</p></td>
+<td><p>38.576</p></td>
+<td><p>26.7</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8n.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>{‘display_name’: ‘YOLOv8s-seg’, ‘task’: ‘segment’, ‘variant’: ‘’, ‘precision’: ‘FP’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8s-seg_rk3588_fp.rknn’, ‘size_bytes’: 25644467, ‘sha256’: ‘b7117e663aa8d39024c99f1060ad80fc06877ebaf8979604b950c8916f608e81’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>104.535</p></td>
+<td><p>113.085</p></td>
+<td><p>9.6</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8s-seg.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>{‘display_name’: ‘YOLOv8s-seg’, ‘task’: ‘segment’, ‘variant’: ‘’, ‘precision’: ‘INT8’, ‘source’: {‘name’: ‘RKNN Model Zoo’, ‘url’: ‘https://github.com/airockchip/rknn_model_zoo’}, ‘file’: ‘yolov8s-seg_rk3588_int8.rknn’, ‘size_bytes’: 13311017, ‘sha256’: ‘f0af5adfd87e62b7dac6db891a9f9e71587846f9f25d4a94e22940452726d2bc’}</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>43.836</p></td>
+<td><p>45.439</p></td>
+<td><p>22.8</p></td>
+<td><p>NPU_ONLY</p></td>
+<td><p>0.0%</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">YOLOv8s-seg_INT8_v04.json</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The summary leaderboard (<code class="docutils literal notranslate"><span class="pre">data/leaderboard.json</span></code>) contains the same 23 configurations that passed the aggregation gate; the two additional reports are the PP-YOLOE-s FP/INT8 pair measured in the kit completion round, included here in full.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="environment.html" class="btn btn-neutral float-left" title="Environment Fingerprint" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="known-issues.html" class="btn btn-neutral float-right" title="Known Issues &amp; Failure Records" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Methodology
+
+Every figure in this package was produced under one protocol. If you
+re-measure, follow it exactly before comparing numbers.
+
+## Protocol
+
+- **Warmup:** 10 runs before timing.
+- **Timed runs:** 50 per session, timed with the NPU `PERF_RUN` profiler.
+- **Sessions:** 3 independent sessions, each in a separate process. The
+  published latency is the **median of the three session medians**; the
+  per-session values are kept in every raw report.
+- **Priming:** before the first timed session, one sacrificial load +
+  5-run cycle in a separate process. The first RKNN process after idle
+  measures ~15% slower on this platform (see
+  [Known Issues](known-issues.md)); skipping priming invalidates a
+  comparison.
+- **CPU fallback:** computed from per-operator profiler timings. A
+  configuration is `NPU_ONLY` only if zero operators executed on CPU;
+  otherwise it is `MIXED` and the fallback share is printed.
+- **Memory:** RSS delta over 3 load cycles, plus profiler read/write
+  volume per frame where available.
+
+## Aggregation gate
+
+A configuration enters `leaderboard.json` only when all three sessions
+completed and the artifact hash matches the measured file. Two reports in
+this package (the PP-YOLOE-s pair from the kit completion round) are
+included as raw reports with their own session records.
+
+## Calibration disclosure
+
+INT8 reports record the exact calibration recipe and dataset (the RKNN
+Model Zoo COCO subset: 20 images from COCO val2017, filenames and order
+verified). Calibration data affects accuracy, not the latency protocol;
+**no accuracy claim is made anywhere in this package**.

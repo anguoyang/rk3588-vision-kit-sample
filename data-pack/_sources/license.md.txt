@@ -1,0 +1,14 @@
+# License (summary)
+
+The full text ships in the package as `LICENSE-DATA.md`. Summary:
+
+- **Permitted:** use of the data inside one organization, including in
+  internal evaluations, procurement documents, product planning, and
+  published comparisons **with attribution** to "EdgeModelLab RK3588
+  Measurement Data Pack".
+- **Not permitted:** resale or redistribution of the raw report files or
+  the leaderboard JSON, in whole or in substantial part; publishing the
+  raw files in a public repository.
+- **No warranty of fitness for a different environment** — see the
+  environment fingerprint. Figures are warranted to be the genuine
+  output of the stated protocol on the stated configuration.

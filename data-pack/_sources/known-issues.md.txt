@@ -1,0 +1,37 @@
+# Known Issues & Failure Records
+
+The failures are part of the product. A measurement package that only
+publishes successes is marketing, not data.
+
+## First-context effect (~15%)
+
+The first RKNN process after the board has been idle measures ~15%
+slower, even after warmup, under the `rknpu_ondemand` governor. Any
+single cold benchmark of this platform is biased low. The protocol's
+priming step exists because of this effect.
+
+## RetinaFace INT8: two defects, one withdrawn build
+
+- **Artifact bloat:** the toolkit 2.3.2 build produced an 18.9 MB
+  artifact for a ~1.5 M-parameter network; layer isolation traced ~17.5 MB
+  of zero-filled image to memory planning around the final `Concat`
+  operator. Compiler behaviour, not a settings error.
+- **Confidence collapse:** the `normal`-calibration INT8 build detected
+  **0 of 3** reference faces at a 0.5 threshold; confidence scores are
+  systematically compressed. That build was **withdrawn**. The
+  KL-divergence build (2 of 3 faces, 7.99 ms p50) is the shipped record,
+  and the FP build remains faster (6.43 ms p50) — INT8 is not
+  automatically better, and this package says so per model.
+
+## Session variance is real
+
+Session medians for one artifact can differ visibly (YOLO11n INT8:
+23.8 / 31.4 / 31.2 ms across three sessions). Reports keep every session
+value. Any single-number table without a spread should be treated as
+unmeasured.
+
+## PP-OCRv4-Rec fallback
+
+One `Reshape` after the final softmax runs on CPU in both precisions
+(2.58% FP / 2.61% INT8 of frame time). Recorded, not hidden; budget for
+it.

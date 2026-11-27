@@ -1,0 +1,32 @@
+# Quickstart
+
+## 1. Runtime
+
+Install `librknnrt` 2.3.2 (vendor package for your board) and verify:
+
+```bash
+strings /usr/lib/librknnrt.so | grep -i "librknnrt version"
+# expected: librknnrt version: 2.3.2
+```
+
+The runtime is Rockchip-proprietary and is not redistributed in this
+pack.
+
+## 2. Run the example
+
+```bash
+cd example_ocr_ppocrv4
+python3 run_ocr.py --det ../models/ppocrv4_det_rk3588_fp.rknn \
+                   --rec ../models/ppocrv4_rec_rk3588_fp.rknn \
+                   --image test_text.png
+```
+
+The example prints the recognized text lines with box coordinates.
+Swap in the `*_int8.rknn` artifacts for the INT8 pair; expected latency
+difference is in [Benchmarks](benchmarks.md).
+
+## 3. Verify against the record
+
+Your board, same versions: detection FP should land near **47.9 ms p50**.
+A uniformly ~15% slower first run is a known platform effect (first
+RKNN process after idle) — run it twice before concluding anything.

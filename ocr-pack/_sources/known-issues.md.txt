@@ -1,0 +1,30 @@
+# Known Issues
+
+## Recognition INT8 is not an official recipe
+
+The RKNN Model Zoo ships the recognition model FP-only (no
+normalization). This pack's INT8 recognition build keeps the same
+no-normalization configuration and quantizes with the zoo's COCO-subset
+calibration. It is measured and works, but it is **our** recipe, not an
+official one — treat its accuracy on your documents as unverified until
+you run your own samples. This divergence is disclosed here rather than
+discovered by you.
+
+## Reshape fallback in recognition
+
+Both recognition builds execute one `Reshape` (after the final softmax)
+on CPU: 2.58% (FP) / 2.61% (INT8) of frame time. It does not block
+deployment; budget for it.
+
+## Detection INT8 p95 spread
+
+Detection INT8 shows a wider p95 (39.99 ms against a 31.39 ms p50) than
+its FP sibling. Under a hard real-time budget, prefer FP detection or
+leave headroom.
+
+## Character confusions observed
+
+The synthetic end-to-end test produced two confusions (O→0, I→l) out of
+38 characters — typical for this model class on synthetic fonts, and
+the reason this pack does not quote a character accuracy figure for
+real documents.

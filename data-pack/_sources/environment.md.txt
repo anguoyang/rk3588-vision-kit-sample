@@ -1,0 +1,22 @@
+# Environment Fingerprint
+
+Every report carries this fingerprint in its own `board` block; it is
+reproduced here so the package can be evaluated without opening a file.
+
+| Component | Value |
+|---|---|
+| SoC | Rockchip RK3588 |
+| OS | Ubuntu 22.04.5 LTS |
+| Kernel | 6.1.118 |
+| NPU driver | 0.9.8 |
+| Runtime | librknnrt 2.3.2 (build `429f97ae6b@2025-04-09T09:09:27`) |
+| Conversion toolkit | rknn-toolkit2 2.3.2 (x86_64 host) |
+| Governor | `rknpu_ondemand` (see the first-context effect in [Known Issues](known-issues.md)) |
+
+```{warning}
+Numbers in this package are valid for this fingerprint. A different
+driver or runtime version can move latency and change which operators
+fall back to CPU. Treat cross-environment comparison as indicative only,
+and re-measure under the [Methodology](methodology.md) protocol before
+making a procurement decision on a different stack.
+```

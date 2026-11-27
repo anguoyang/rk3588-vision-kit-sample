@@ -1,0 +1,11 @@
+# Licensing
+
+- **Models:** PP-OCRv4 detection and recognition weights, from
+  PaddleOCR via the RKNN Model Zoo — **Apache-2.0**, redistribution
+  permitted. Per-artifact SHA-256 and source chain are listed in
+  `LICENSES.md` inside the package.
+- **Example code:** original to this pack, written against the
+  documented zoo output formats; commercial use permitted under the
+  pack license.
+- **Runtime:** `librknnrt` is Rockchip-proprietary and is **not**
+  included; install it from your board vendor's package.
