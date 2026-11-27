@@ -19,18 +19,23 @@ failures are overwhelmingly version-mismatch failures.
 
 ## Rules that come from hard experience
 
-!!! warning "Toolkit and runtime move together"
-    Artifacts converted with toolkit 2.3.2 are verified against runtime
-    2.3.2. Mixing a 2.3.x toolkit with a 2.0/2.1 runtime (or the reverse)
-    produces load errors or silent accuracy loss. The kit pins the pair.
+```{warning}
+**Toolkit and runtime move together.** Artifacts converted with toolkit
+2.3.2 are verified against runtime 2.3.2. Mixing a 2.3.x toolkit with a
+2.0/2.1 runtime (or the reverse) produces load errors or silent accuracy
+loss. The kit pins the pair.
+```
 
-!!! note "The toolkit is x86_64 only"
-    Conversion happens on an x86_64 host. The board only runs artifacts.
-    The pipeline scripts in the package assume this split.
+```{note}
+**The toolkit is x86_64 only.** Conversion happens on an x86_64 host. The
+board only runs artifacts. The pipeline scripts in the package assume this
+split.
+```
 
-!!! note "Runtime is not redistributed"
-    `librknnrt` is Rockchip-proprietary. The kit ships sideload instructions
-    and version checks, not the binary.
+```{note}
+**Runtime is not redistributed.** `librknnrt` is Rockchip-proprietary. The
+kit ships sideload instructions and version checks, not the binary.
+```
 
 ## Support boundary
 

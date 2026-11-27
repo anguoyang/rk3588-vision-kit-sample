@@ -56,3 +56,14 @@ That is what the package sells: the two weeks, already spent.
 - Free sample: the GitHub repository linked above (MobileNetV2, full pipeline)
 - Support: see [FAQ](faq.md). 14-day refund if the pipeline does not run as
   documented on a version-matrix configuration.
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+
+quickstart
+version-matrix
+benchmarks
+known-issues
+faq
+```
